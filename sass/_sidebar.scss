@@ -1,0 +1,45 @@
+.sidebar {
+  background: linear-gradient($color-grey-dark-2, $color-primary, $color-grey-dark-2);
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+  
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background: linear-gradient(to left, $color-grey-dark-2, $color-primary, $color-grey-dark-2);
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  display: flex;
+  justify-content: center;
+}
+
+.nav-btn {
+  border: none;
+  border-radius: 0;
+
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+
+   @media only screen and (max-width: $bp-large) {
+    margin-top: 0;
+    margin-right: 1.5rem;
+    &::before { transform: translateY(-1.2em) }
+    &::after { transform: translateY(1rem)}
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem;
+    display: block;
+  }
+
+  &::before { transform: translateY(-1.5rem) }
+  &::after { transform: translateY(1.3rem)}
+}
